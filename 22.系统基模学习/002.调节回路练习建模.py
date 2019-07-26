@@ -5,6 +5,7 @@ from matplotlib import pyplot as plt
 # 调节回路
 
 建模：水温差-室温-温度变化
+流量存量图： 流入   | 存量  | 流出  | 关系
 分析：
   假设：
 	室温：30 

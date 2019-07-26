@@ -6,6 +6,7 @@ from matplotlib import pyplot as plt
 	增强回路 
 
 建模：对工作负荷-处理能力-失误频率 建模
+流量存量图： 流入   | 存量  | 流出  | 关系
 分析：
 	设 时间为X小时；
 	设 处理能力为A = 10 个/H；

@@ -6,6 +6,7 @@ from matplotlib import pyplot as plt
 #成长上限(Limits to Growth)  经济学中的边际效应递减模式   logistic模型
 
 建模：促进因素-成长情况-抑制因素 （限制因素外部因素变量也叫悬摆）
+流量存量图： 流入   | 存量  | 流出  | 关系
 分析：
   存量：成长速度状态-- GrowthState=20 
   流量： 自然增长率 = 促进因素 - 抑制因素
@@ -52,59 +53,59 @@ k = 100
 #subplots(nrows=1, ncols=1, sharex=False, sharey=False, squeeze=True,subplot_kw=None, gridspec_kw=None, **fig_kw)
 fig, axs = plt.subplots(2, 1)   #两行，一列 。两个图像
 
+'''
+# 初步完成模型
+y = [logistic(n,r*0.1,k,i,1) for i in x]
+z = [logistic(n,r*0.1,k,i,2) for i in x]
+axs[0].plot(x,y,label='y') 
+axs[1].plot(x,z,label='显示累计') 
+axs[1].legend(loc='upper right', shadow=False)
+'''
 
-''' #多个对比
-y1 = [logistic(n,r*0.1,k,i,1) for i in x]
-y2 = [logistic(n,r*0.1,k,i,1) for i in x]
-y3 = [logistic(n,r*0.1,k,i,1) for i in x]
-y4 = [logistic(n,r*0.1,k,i,1) for i in x]
-y5 = [logistic(n,r*0.1,k,i,1) for i in x]
-y6 = [logistic(n,r*0.1,k,i,1) for i in x]
-y7 = [logistic(n,r*0.1,k,i,1) for i in x]
-y8 = [logistic(n,r*0.1,k,i,1) for i in x]
-y9 = [logistic(n,r*0.1,k,i,1) for i in x]
 
-z1 = [logistic(n,r*0.1,k,i,2) for i in x]
-z2 = [logistic(n,r*0.1,k,i,2) for i in x]
-z3 = [logistic(n,r*0.1,k,i,2) for i in x]
-z4 = [logistic(n,r*0.1,k,i,2) for i in x]
-z5 = [logistic(n,r*0.1,k,i,2) for i in x]
-z6 = [logistic(n,r*0.1,k,i,2) for i in x]
-z7 = [logistic(n,r*0.1,k,i,2) for i in x]
-z8 = [logistic(n,r*0.1,k,i,2) for i in x]
-z9 = [logistic(n,r*0.1,k,i,2) for i in x]
 
+ 
+#多个对比 1, K定，r变
+y0 = [logistic(n,r*200.0,k,i,1) for i in x]
+y1 = [logistic(n,r*100.0,k,i,1) for i in x]
+y2 = [logistic(n,r*10.00,k,i,1) for i in x]
+y3 = [logistic(n,r*1.000,k,i,1) for i in x]
+y4 = [logistic(n,r*0.100,k,i,1) for i in x]
+y5 = [logistic(n,r*0.010,k,i,1) for i in x]
+y6 = [logistic(n,r*0.001,k,i,1) for i in x]
+
+
+z1 = [logistic(n,r*200.0,k,i,2) for i in x]
+z1 = [logistic(n,r*100.0,k,i,2) for i in x]
+z2 = [logistic(n,r*10.00,k,i,2) for i in x]
+z3 = [logistic(n,r*1.000,k,i,2) for i in x]
+z4 = [logistic(n,r*0.100,k,i,2) for i in x]
+z5 = [logistic(n,r*0.010,k,i,2) for i in x]
+z6 = [logistic(n,r*0.001,k,i,2) for i in x]
+
+axs[0].plot(x,y1,label='y0') 
 axs[0].plot(x,y1,label='y1') 
 axs[0].plot(x,y2,label='y2') 
 axs[0].plot(x,y3,label='y3') 
 axs[0].plot(x,y4,label='y4') 
 axs[0].plot(x,y5,label='y5') 
 axs[0].plot(x,y6,label='y6') 
-axs[0].plot(x,y7,label='y7') 
-axs[0].plot(x,y8,label='y8') 
-axs[0].plot(x,y9,label='y9') 
 
 axs[0].legend(loc='upper right', shadow=False)
 
+
+axs[1].plot(x,z1,label='z0') 
 axs[1].plot(x,z1,label='z1') 
 axs[1].plot(x,z2,label='z2') 
 axs[1].plot(x,z3,label='z3') 
 axs[1].plot(x,z4,label='z4') 
 axs[1].plot(x,z5,label='z5') 
 axs[1].plot(x,z6,label='z6') 
-axs[1].plot(x,z7,label='z7') 
-axs[1].plot(x,z8,label='z8') 
-axs[1].plot(x,z9,label='z9') 
 
 axs[1].legend(loc='upper right', shadow=False)
-'''
+ 
 
 
-y = [logistic(n,r*0.1,k,i,1) for i in x]
-z = [logistic(n,r*0.1,k,i,2) for i in x]
-axs[0].plot(x,y,label='y') 
-axs[1].plot(x,z,label='显示累计') 
-axs[1].legend(loc='upper right', shadow=False)
 
 
 plt.title("成长上线") 
