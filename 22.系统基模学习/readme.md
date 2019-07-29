@@ -15,3 +15,10 @@
 * 成长与投资不足(Growth and Underinvestment) 
 
 * 反应迟缓的调节环路(Balancing Loop with Time Delay)(反应迟缓) 
+
+
+
+- [初开的思维框架库：](http://thinking.chukai.pro/read/xi-tong-si-wei/xi-tong-de-ji-mo)
+- [易仁永澄模型库简介](http://tm.runwith.cc/)
+
+

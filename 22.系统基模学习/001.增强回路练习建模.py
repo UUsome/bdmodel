@@ -56,13 +56,13 @@ def fuli(inp,outp,flag,rate,numb):
 	# print(int(new))
 
 def logistic(n,r,k,t,f):
-  	for i in range(1,t):
-    	n = n + n*r*(1-n/k)
-    	r = r*(1-n/k)
-    	if f==1:
-      		return r
-    	else:
-      		return n
+  for i in range(1,t):
+    n = n + n*r*(1-n/k)
+    r = r*(1-n/k)
+    if f==1:
+      return r
+    else:
+      return n
 
 '''
 
