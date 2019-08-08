@@ -1,12 +1,14 @@
 import numpy as np 
 from matplotlib import pyplot as plt 
 
+
+
 '''
 基模：
 	增强回路 
 
 建模：对工作负荷-处理能力-失误频率 建模
-流量存量图： 流入   | 存量  | 流出  | 关系
+流量存量图： 流入   | 存量  | 流出0  | 关系
 分析：
 	设 时间为X小时；
 	设 处理能力为A = 10 个/H；
@@ -90,20 +92,19 @@ plt.show()
 
 x = np.arange(1,10)
 
-y3 = [fuli(20,15,2,0.3,i) for i in x]
-y4 = [fuli(20,15,2,0.4,i) for i in x]
-y5 = [fuli(20,15,2,0.5,i) for i in x]
-y6 = [fuli(20,15,2,0.6,i) for i in x]
-y7 = [fuli(20,15,2,0.7,i) for i in x]
-y8 = [fuli(20,15,2,0.8,i) for i in x]
-y9 = [fuli(20,15,2,0.9,i) for i in x]
+y3 = [fuli(20,0,2,0.3,i) for i in x]
+y4 = [fuli(20,0,2,0.4,i) for i in x]
+y5 = [fuli(20,0,2,0.5,i) for i in x]
+y6 = [fuli(20,0,2,0.6,i) for i in x]
+y7 = [fuli(20,0,2,0.7,i) for i in x]
+y8 = [fuli(20,0,2,0.8,i) for i in x]
+y9 = [fuli(20,0,2,0.9,i) for i in x]
 
 
 plt.title("增强回路") 
 plt.xlabel("时间") 
 plt.ylabel("复利展示") 
 
- 
 
 plt.plot(x,y3,label="0.3")
 plt.plot(x,y3,label="0.3")

@@ -25,8 +25,8 @@ from matplotlib import pyplot as plt
 # func(参数说明)
 def func(para,t):
     for i in range(1,t):
-      n =  
-      r =  
+        n =  2
+        r =  3
     if f==1:
         return r
     else:
@@ -34,7 +34,7 @@ def func(para,t):
 
 #初始化参数
 x = np.arange(1,100,1) 
-p = 
+p = 2
 
 #定义显示
 #subplots(nrows=1, ncols=1, sharex=False, sharey=False, squeeze=True,subplot_kw=None, gridspec_kw=None, **fig_kw)
