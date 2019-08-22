@@ -27,4 +27,4 @@
 - [初开：什么是系统思考](https://www.jianshu.com/p/3ef6bec420de "好东西")
 - [系统思考实践篇》读书笔记（1）](https://www.jianshu.com/p/8244f51c8543)
 
-
+ 

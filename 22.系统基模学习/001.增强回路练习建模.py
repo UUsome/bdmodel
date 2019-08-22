@@ -1,8 +1,6 @@
 import numpy as np 
 from matplotlib import pyplot as plt 
 
-
-
 '''
 基模：
 	增强回路 
@@ -35,14 +33,14 @@ from matplotlib import pyplot as plt
 ''' fuli(流入量inp,流出量,速率rate,单位数量numb,标记flag) 
 	flag==1 计算累计流入量；flag==2 计算实际存量   '''
 def fuli(inp,outp,flag,rate,numb):
-	if flag ==1:
+	if flag ==1:  #计算速率
 		for i in range(1,numb):
 			if numb == 1:
 				inp = inp
 			else:
 				inp = inp+inp*rate
 		return int(inp)
-	elif flag ==2:
+	elif flag ==2:    #计算累计
 		for i in range(1,numb):
 			if numb == 1:
 				if inp >= outp:
@@ -67,54 +65,49 @@ def logistic(n,r,k,t,f):
       return n
 
 '''
-
+'''
 # 初始化参数：
 imput = 20 # input("请输入流入量：") 
-output = 15 # input("请输入流出量：") 
+output = 0 # input("请输入流出量：") 
 v = 0.2 # input("请输入速率：")  
-num = 82 # input("请输入单位长度：")
+num = 100 # input("请输入单位长度：")
 fl = 2
+
 
 x = np.arange(1,num+1)
 y = [fuli(imput,output,fl,v,i) for i in x]
+z = [fuli(imput,output,2,v,i) for i in x]
 
-plt.title("增强回路") 
+
+plt.figure()       #定义一个图集
+plt.subplot(211)  #第一个子图
+
+plt.title("增强回路-1") 
 plt.xlabel("时间") 
 plt.ylabel("复利展示") 
-# print(x,y)
-plt.plot(x,y)  
-plt.show()
-'''
+plt.plot(x,y) 
 
+plt.subplot(212) #第一个子图
 
-
-#测试
-
-x = np.arange(1,10)
-
-y3 = [fuli(20,0,2,0.3,i) for i in x]
-y4 = [fuli(20,0,2,0.4,i) for i in x]
-y5 = [fuli(20,0,2,0.5,i) for i in x]
-y6 = [fuli(20,0,2,0.6,i) for i in x]
-y7 = [fuli(20,0,2,0.7,i) for i in x]
-y8 = [fuli(20,0,2,0.8,i) for i in x]
-y9 = [fuli(20,0,2,0.9,i) for i in x]
-
-
-plt.title("增强回路") 
+plt.title("增强回路-2") 
 plt.xlabel("时间") 
 plt.ylabel("复利展示") 
-
-
-plt.plot(x,y3,label="0.3")
-plt.plot(x,y3,label="0.3")
-plt.plot(x,y4,label='0.4')
-plt.plot(x,y5,label='0.5')
-plt.plot(x,y6,label='0.6')
-plt.plot(x,y7,label='0.7')
-plt.plot(x,y8,label='0.8')
-plt.plot(x,y9,label='0.9')
-
-plt.legend(loc='upper right', shadow=False, fontsize='large')
+plt.plot(x,z) 
 
 plt.show()
+
+
+
+
+
+
+# plt.legend(loc='upper right', shadow=False, fontsize='large')
+ 
+ 
+
+
+
+ 
+
+
+ 

@@ -29,7 +29,7 @@ from matplotlib import pyplot as plt
 '''
 
 
-''' tiaojie(差值，变化速率,时长) ''' 
+''' tiaojie(差值，变化速率,时长,标志) ''' 
 def tiaojie(sub,rate,numb):
 	for i in range(1,numb):
 		if numb == 1:

@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 np.random.seed(19680801)
+def
 
 # example data
 mu = 100  # mean of distribution

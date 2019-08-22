@@ -35,24 +35,29 @@ from matplotlib import pyplot as plt
 #  logistic(初始数量，初始自然增长率，成长极限，时间，标志): f=1显示速度，2显示累计
 def logistic(n,r,k,t,f):
     for i in range(1,t):
-      n = n + n*r*(1-n/k)
-      r = r*(1-n/k)
+        if r<=0:
+          n = n
+          r = 0.1
+        else:
+          n = n + n*r*(1-n/k)
+          r = r*(1-n/k)
+
     if f==1:
         return r
     else:
         return n
 
 # 定义时间区间
-x = np.arange(1,100,1) 
+x = np.arange(1,20,1) 
 
 #初始化参数
 n = 1
-r = 1
-k = 100
+r = 0.1
+k = 10
 
 
 #subplots(nrows=1, ncols=1, sharex=False, sharey=False, squeeze=True,subplot_kw=None, gridspec_kw=None, **fig_kw)
-fig, axs = plt.subplots(2, 1)   #两行，一列 。两个图像
+fig, axs = plt.subplots(2, 1 )   #两行，一列 。两个图像
 
 '''
 # 初步完成模型
@@ -63,72 +68,27 @@ axs[1].plot(x,z,label='显示累计')
 axs[1].legend(loc='upper right', shadow=False)
 '''
 
-
+plt.title("成长上线")
 
  
 #多个对比 1, K定，r变
-y0 = [logistic(n,r*200.0,k,i,1) for i in x]
-y1 = [logistic(n,r*100.0,k,i,1) for i in x]
-y2 = [logistic(n,r*10.00,k,i,1) for i in x]
-y3 = [logistic(n,r*1.000,k,i,1) for i in x]
-y4 = [logistic(n,r*0.100,k,i,1) for i in x]
-y5 = [logistic(n,r*0.010,k,i,1) for i in x]
-y6 = [logistic(n,r*0.001,k,i,1) for i in x]
+y = [logistic(n,r*200.0,k,i,1) for i in x]
+
+z = [logistic(n,r*200.0,k,i,2) for i in x]
 
 
-z1 = [logistic(n,r*200.0,k,i,2) for i in x]
-z1 = [logistic(n,r*100.0,k,i,2) for i in x]
-z2 = [logistic(n,r*10.00,k,i,2) for i in x]
-z3 = [logistic(n,r*1.000,k,i,2) for i in x]
-z4 = [logistic(n,r*0.100,k,i,2) for i in x]
-z5 = [logistic(n,r*0.010,k,i,2) for i in x]
-z6 = [logistic(n,r*0.001,k,i,2) for i in x]
-
-axs[0].plot(x,y1,label='y0') 
-axs[0].plot(x,y1,label='y1') 
-axs[0].plot(x,y2,label='y2') 
-axs[0].plot(x,y3,label='y3') 
-axs[0].plot(x,y4,label='y4') 
-axs[0].plot(x,y5,label='y5') 
-axs[0].plot(x,y6,label='y6') 
-
+axs[0].plot(x,y,label='y0') 
+axs[0].set_title("数量")
 axs[0].legend(loc='upper right', shadow=False)
 
 
-axs[1].plot(x,z1,label='z0') 
-axs[1].plot(x,z1,label='z1') 
-axs[1].plot(x,z2,label='z2') 
-axs[1].plot(x,z3,label='z3') 
-axs[1].plot(x,z4,label='z4') 
-axs[1].plot(x,z5,label='z5') 
-axs[1].plot(x,z6,label='z6') 
+axs[1].plot(x,z,label='z0') 
 
+
+axs[1].set_title('增长率')
 axs[1].legend(loc='upper right', shadow=False)
  
 
 
-
-
-plt.title("成长上线") 
-plt.xlabel("时间") 
-plt.ylabel("成长速度") 
-# print(x,y,z)
 plt.show()
 
-# y = [logistic(10,0.1,50,i,1) for i in x]
-# z = [logistic(10,0.1,50,i,2) for i in x]
-
-# print(x)
-# print(y)
-# print(z)
-
-
-
-
-
-'''  函数分析：
-
-
-
-
-'''
